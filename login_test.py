@@ -2,7 +2,7 @@
 from flask import Flask,jsonify,request,render_template
 
 #객체생성
-app=Flask(__name__)
+app=Flask(__name__,static_url_path='/static')
 
 #로그인페이지 구현
 @app.route('/login')
@@ -22,6 +22,11 @@ def login():
 def hello_html():
     #templates폴더의 로그인폼 렌더링
     return render_template('login.html')
+
+@app.route('/bootstrap')
+def bootstrap():
+    #templates폴더의 로그인폼 렌더링
+    return render_template('login_rawtest.html')
 
 if __name__=='__main__':
     app.run(host='127.0.0.1',port='8080')
