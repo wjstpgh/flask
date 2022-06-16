@@ -10,6 +10,11 @@
       {% for value in values %}
       <li>{{ value }}</li>
       {% endfor %}
+      <!-- jinja에서는 range함수는 있지만 len함수는 없다 -->
+      {% for x in range(values | length) %}
+      <!-- loop.index는 1부터 카운트 됨 -->
+      <li>{{ values[x] }} {{loop.index}} </li>
+      {% endfor %}
     </ul>
   </body>
 </html>
