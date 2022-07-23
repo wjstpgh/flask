@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, render_template, session, make_response
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user, fresh_login_required
-from blog_control.user_mgmt import User
+from blog.blog_control.user_mng import User
 from blog_view import blog
 import os
 from flask_cors import CORS
